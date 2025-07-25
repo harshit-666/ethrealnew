@@ -176,22 +176,6 @@ app.post('/submit-Application', upload.single('resume'), async (req, res) => {
 });
 
 
-
-
-// Serve static React files
-app.use(express.static(path.join(__dirname, '../ethreal/dist')));
-
-// Handle all other routes with index.html (for React Router)
-app.get('', (req, res) => {
-  res.sendFile(path.join(__dirname, '../ethreal/dist/index.html'));
-});
-
-
-
-
-
-
-
 // 🔊 Start Server
 app.listen(port, () => {
   console.log(`✅ Server is running on http://localhost:${port}`);
